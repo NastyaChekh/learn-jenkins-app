@@ -3,6 +3,7 @@ pipeline {
 
     stages {
         /*
+
         stage('Build') {
             agent {
                 docker {
@@ -19,9 +20,10 @@ pipeline {
                     npm run build
                     ls -la
                 '''
-            } 
+            }
         }
         */
+
         stage('Test') {
             agent {
                 docker {
@@ -29,11 +31,10 @@ pipeline {
                     reuseNode true
                 }
             }
-            
+
             steps {
                 sh '''
-                    echo "Test stage"
-                    test -f build/index.html
+                    #test -f build/index.html
                     npm test
                 '''
             }
@@ -46,7 +47,7 @@ pipeline {
                     reuseNode true
                 }
             }
-            
+
             steps {
                 sh '''
                     npm install serve
@@ -60,7 +61,7 @@ pipeline {
 
     post {
         always {
-            junit 'test-results/junit.xml'
+            junit 'jest-results/junit.xml'
         }
     }
 }
