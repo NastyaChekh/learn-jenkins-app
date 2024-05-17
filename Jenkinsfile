@@ -124,7 +124,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = 'sprightly-rabanadas-e0a50b.netlify.app'
+                CI_ENVIRONMENT_URL = 'https://sprightly-rabanadas-e0a50b.netlify.app'
             }
 
             steps {
