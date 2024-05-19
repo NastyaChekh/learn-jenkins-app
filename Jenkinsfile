@@ -28,6 +28,7 @@ pipeline {
                     node --version
                     npm --version
                     npm ci
+                    npm run build
                     ls -la
                 '''
             }
@@ -122,7 +123,7 @@ pipeline {
             environment {
                 CI_ENVIRONMENT_URL = 'https://sprightly-rabanadas-e0a50b.netlify.app'
             }
-            
+
             steps {
                 sh '''
                     node --version
